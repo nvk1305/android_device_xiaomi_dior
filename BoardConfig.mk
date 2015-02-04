@@ -20,9 +20,9 @@
 # definition file).
 #
 
-TARGET_OTA_ASSERT_DEVICE := a5,a5tl,a5dug,a5dwg,a5chl,a5ul
+TARGET_OTA_ASSERT_DEVICE := dior
 
-BOARD_VENDOR := htc
+BOARD_VENDOR := xiaomi
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
@@ -49,9 +49,9 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/a5/mkbootimg.mk
-TARGET_KERNEL_CONFIG := cm_a5_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/msm8974
+BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/dior/mkbootimg.mk
+TARGET_KERNEL_CONFIG := cm_dior_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/dior
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -69,23 +69,23 @@ BOARD_USES_ALSA_AUDIO := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/a5/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/dior/bluetooth
 
 # Camera
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
-COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0}, {"persist.camera.", AID_MEDIA, 0},'
+COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"xiaomi.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0}, {"persist.camera.", AID_MEDIA, 0},'
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charge mode
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/xiaomi_lpm/lpm_mode
 
 # Graphics
 TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-BOARD_EGL_CFG := device/htc/a5/configs/egl.cfg
+BOARD_EGL_CFG := device/xiaomi/dior/configs/egl.cfg
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -95,7 +95,7 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/htc/a5/ril/
+BOARD_RIL_CLASS := ../../../device/xiaomi/dior/ril/
 
 # RPC
 TARGET_NO_RPC := true
@@ -117,7 +117,7 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/htc/a5/sepolicy
+    device/xiaomi/dior/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     app.te \
@@ -151,10 +151,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Charge mode
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/xiaomi_lpm/lpm_mode
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/htc/a5/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/xiaomi/dior/rootdir/etc/fstab.qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -163,18 +163,18 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_a5
-TARGET_LIBINIT_DEFINES_FILE := device/htc/a5/init/init_a5.c
+TARGET_INIT_VENDOR_LIB := libinit_dior
+TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/dior/init/init_dior.c
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/a5/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/dior/releasetools
 
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/htc/a5/cmhw
+BOARD_HARDWARE_CLASS := device/xiaomi/dior/cmhw
 
 # inherit from the proprietary version
--include vendor/htc/a5/BoardConfigVendor.mk
+-include vendor/xiaomi/dior/BoardConfigVendor.mk

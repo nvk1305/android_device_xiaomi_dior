@@ -72,7 +72,7 @@ void cdma_properties(char default_cdma_sub[], char default_network[],
     property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420");
     property_set("ro.ril.enable.sdr", "0");
     property_set("ro.ril.enable.gea3", "1");
-    property_set("ro.ril.enable.a53", "1");
+    property_set("ro.ril.enable.dior3", "1");
     property_set("persist.radio.snapshot_enabled", "1");
     property_set("persist.radio.snapshot_timer", "22");
 }
@@ -93,39 +93,39 @@ void vendor_load_properties()
     property_get("ro.boot.carrier", carrier);
 
     if (strstr(bootmid, "0P9C10000")) {
-        /* a5tl */
+        /* diortl */
         gsm_properties("9");
-        property_set("ro.build.fingerprint", "htc/htccn_chs_cmcc/htc_a5tl:4.4.2/KOT49H/391137.3:user/release-keys");
+        property_set("ro.build.fingerprint", "xiaomi/xiaomicn_chs_cmcc/xiaomi_diortl:4.4.2/KOT49H/391137.3:user/release-keys");
         property_set("ro.build.description", "2.07.1403.3 CL391137 release-keys");
         property_set("ro.product.model", "D816t");
-        property_set("ro.product.device", "a5tl");
-        property_set("ro.build.product", "a5tl");
+        property_set("ro.product.device", "diortl");
+        property_set("ro.build.product", "diortl");
         property_set("ro.ril.hsdpa.category", "10");
         property_set("ro.ril.hsxpa", "2");
         property_set("ro.ril.enable.sdr", "0");
-        property_set("ro.ril.enable.a53", "1");
+        property_set("ro.ril.enable.dior3", "1");
         property_set("ro.ril.disable.fd.plmn.prefix", "23402,23410,23411,23420,27202");
         property_set("ro.ril.oem.ecclist", "112,000,08,110,118,119,911,999,120,122");
         property_set("ro.ril.set.mtusize", "1420");
     } else if (strstr(bootmid, "0P9C30000")) {
-        /* a5chl */
+        /* diorchl */
         cdma_properties("1", "8", "310120", "Sprint");
-        property_set("ro.build.fingerprint", "htc/sprint_wwe_vm/htc_a5chl:4.4.2/KOT49H/338737.1:user/release-keys");
+        property_set("ro.build.fingerprint", "xiaomi/sprint_wwe_vm/xiaomi_diorchl:4.4.2/KOT49H/338737.1:user/release-keys");
         property_set("ro.build.description", "1.13.652.1 CL338737 release-keys");
         property_set("ro.product.model", "710C");
-        property_set("ro.product.device", "a5chl");
-        property_set("ro.build.product", "a5chl");
+        property_set("ro.product.device", "diorchl");
+        property_set("ro.build.product", "diorchl");
         property_set("telephony.sms.pseudo_multipart", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
     } else if (strstr(bootmid, "0P9C50000")) {
-        /* a5dwg (chinese) */
+        /* diordwg (chinese) */
         dualsim_properties("dsds");
-        property_set("ro.build.fingerprint", "htc/htccn_chs_ct/htc_a5dwg:4.4.2/KOT49H/377271.2:user/release-keys");
+        property_set("ro.build.fingerprint", "xiaomi/xiaomicn_chs_ct/xiaomi_diordwg:4.4.2/KOT49H/377271.2:user/release-keys");
         property_set("ro.build.description", "2.06.1401.2 CL377271 release-keys");
         property_set("ro.product.model", "D816d");
-        property_set("ro.product.device", "a5dwg");
-        property_set("ro.build.product", "a5dwg");
+        property_set("ro.product.device", "diordwg");
+        property_set("ro.build.product", "diordwg");
         property_set("ro.telephony.default_network", "7");
         property_set("ro.ril.enable.pre_r8fd", "1");
         property_set("ro.ril.enable.sdr", "0");
@@ -134,50 +134,50 @@ void vendor_load_properties()
         property_set("ro.ril.oem.ecclist", "110,112,119,120,911,999");
         property_set("ro.ril.set.mtusize", "1420");
     } else if (strstr(bootmid, "0P9C51000")) {
-        /* a5dwg (international) */
+        /* diordwg (international) */
         gsm_properties("7");
         dualsim_properties("dsds");
-        property_set("ro.build.fingerprint", "htc/htc_asia_india/htc_a5dwg:4.4.2/KOT49H/334435.1:user/release-keys");
+        property_set("ro.build.fingerprint", "xiaomi/xiaomi_asia_india/xiaomi_diordwg:4.4.2/KOT49H/334435.1:user/release-keys");
         property_set("ro.build.description", "1.24.720.1 CL334435 release-keys");
         property_set("ro.product.model", "Desire 816 dual sim");
-        property_set("ro.product.device", "a5dwg");
-        property_set("ro.build.product", "a5dwg");
+        property_set("ro.product.device", "diordwg");
+        property_set("ro.build.product", "diordwg");
         property_set("ro.ril.hsdpa.category", "10");
         property_set("ro.ril.air.enabled", "1");
     } else if (strstr(bootmid, "0P9C70000")) {
-        /* a5dug */
+        /* diordug */
         gsm_properties("0");
         dualsim_properties("dsda");
-        property_set("ro.product.device", "a5dug");
-        property_set("ro.build.product", "a5dug");
+        property_set("ro.product.device", "diordug");
+        property_set("ro.build.product", "diordug");
         property_set("persist.radio.relay_oprt_change", "1");
         property_set("ro.ril.hsdpa.category", "24");
         property_set("ro.ril.disable.cpc", "0");
         property_set("ro.ril.enable.sdr", "0");
         if (strstr(carrier, "HTC-Russia")) {
             /* russian */
-            property_set("ro.build.fingerprint", "htc/htc_europe/htc_a5dug:4.4.2/KOT49H/372006.1:user/release-keys");
+            property_set("ro.build.fingerprint", "xiaomi/xiaomi_europe/xiaomi_diordug:4.4.2/KOT49H/372006.1:user/release-keys");
             property_set("ro.build.description", "2.06.1402.2 CL377269 release-keys");
             property_set("ro.product.model", "Desire 816 dual sim");
-            property_set("ro.ril.enable.a53", "1");
+            property_set("ro.ril.enable.dior3", "1");
         } else {
             /* chinese */
-            property_set("ro.build.fingerprint", "htc/htccn_chs_cu/htc_a5dug:4.4.2/KOT49H/377269.2:user/release-keys");
+            property_set("ro.build.fingerprint", "xiaomi/xiaomicn_chs_cu/xiaomi_diordug:4.4.2/KOT49H/377269.2:user/release-keys");
             property_set("ro.build.description", "1.45.708.1 CL356136 release-keys");
             property_set("ro.product.model", "D816w");
             property_set("ro.ril.air.enabled", "1");
         }
     } else {
-        /* a5ul */
+        /* diorul */
         gsm_properties("9");
-        property_set("ro.build.fingerprint", "htc/htc_asia_wwe/htc_a5ul:4.4.2/KOT49H/358649.1:user/release-keys");
+        property_set("ro.build.fingerprint", "xiaomi/xiaomi_asia_wwe/xiaomi_diorul:4.4.2/KOT49H/358649.1:user/release-keys");
         property_set("ro.build.description", "1.49.707.1 CL358649 release-keys");
         property_set("ro.product.model", "Desire 816");
-        property_set("ro.product.device", "a5ul");
-        property_set("ro.build.product", "a5ul");
+        property_set("ro.product.device", "diorul");
+        property_set("ro.build.product", "diorul");
         property_set("ro.ril.hsdpa.category", "14");
         property_set("ro.ril.air.enabled", "1");
-        property_set("ro.ril.enable.a53", "1");
+        property_set("ro.ril.enable.dior3", "1");
         property_set("persist.radio.jbims", "1");
         property_set("ro.ril.enable.gea3", "1");
         property_set("ro.ril.gsm.to.lte.blind.redir", "1");

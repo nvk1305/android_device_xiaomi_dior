@@ -152,7 +152,7 @@ vendor/lib/libchromatix_skuf_ov5648_p5v23c_default_video.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_preview.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_snapshot.so
 vendor/lib/libfastcvopt.so
-vendor/lib/libhtccamera.so
+vendor/lib/libxiaomicamera.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -328,7 +328,7 @@ blobs/chl/vendor/lib/libqmi.so
 blobs/gsm/bin/netmgrd
 blobs/gsm/bin/rild
 blobs/gsm/lib/libril.so
-blobs/gsm/lib/libhtc_rilhook.so
+blobs/gsm/lib/libxiaomi_rilhook.so
 blobs/gsm/vendor/lib/libnetmgr.so
 blobs/gsm/vendor/lib/libril-qc-qmi-1.so
 blobs/gsm/vendor/lib/libril-qcril-hook-oem.so

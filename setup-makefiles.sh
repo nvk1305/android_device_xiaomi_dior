@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export DEVICE=a5
-export VENDOR=htc
+export DEVICE=dior
+export VENDOR=xiaomi
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
@@ -98,11 +98,11 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifneq (\$(filter a5,\$(TARGET_DEVICE)),)
+ifneq (\$(filter dior,\$(TARGET_DEVICE)),)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff
-LOCAL_MODULE_OWNER := htc
+LOCAL_MODULE_OWNER := xiaomi
 LOCAL_SRC_FILES := proprietary/lib/libtime_genoff.so
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := .so

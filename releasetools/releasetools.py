@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-""" Custom OTA commands for a5 devices """
+""" Custom OTA commands for dior devices """
 
 def FullOTA_InstallEnd(info):
   info.script.AppendExtra('assert(run_program("/system/bin/makelinks.sh") == 0);')

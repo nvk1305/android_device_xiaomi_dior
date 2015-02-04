@@ -24,7 +24,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-$(call inherit-product, device/htc/a5/full_a5.mk)
+$(call inherit-product, device/xiaomi/dior/full_dior.mk)
 
 # Device naming
-PRODUCT_NAME := cm_a5
+PRODUCT_NAME := cm_dior

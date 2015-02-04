@@ -2,7 +2,7 @@
 
 ifeq ($(BOARD_PROVIDES_LIBRIL),true)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8226)
-ifeq ($(BOARD_VENDOR),htc)
+ifeq ($(BOARD_VENDOR),xiaomi)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)

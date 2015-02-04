@@ -1741,7 +1741,7 @@ static int responseStrings(Parcel &p, void *response, size_t responselen, bool n
         for (int i = 0 ; i < numStrings ; i++) {
 #ifdef RIL_FIVE_SEARCH_RESPONSES
             sCount++;
-            // ignore the fifth string that is returned by newer HTC libhtc_ril.so.
+            // ignore the fifth string that is returned by newer HTC libxiaomi_ril.so.
             if (network_search == true && sCount % 5 == 0) {
                 sCount = 0;
                 continue;
@@ -3772,21 +3772,21 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
          *
          * don't forget to update indices when changing something!
          */
-        int htc_base = 41;
+        int xiaomi_base = 41;
 #ifdef RIL_NO_CELL_INFO_LIST
         /* offset by one, because RIL_UNSOL_CELL_INFO_LIST isn't in the list */
-        htc_base--;
+        xiaomi_base--;
 #endif
         switch (unsolResponse) {
-          case RIL_UNSOL_ENTER_LPM: unsolResponseIndex = htc_base + 0; break;
-          case RIL_UNSOL_CDMA_3G_INDICATOR: unsolResponseIndex = htc_base + 1; break;
-          case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR: unsolResponseIndex = htc_base + 2; break;
-          case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL: unsolResponseIndex = htc_base + 3; break;
-          case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE: unsolResponseIndex = htc_base + 4; break;
-          case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: unsolResponseIndex = htc_base + 5; break;
-          case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC: unsolResponseIndex = htc_base + 6; break;
+          case RIL_UNSOL_ENTER_LPM: unsolResponseIndex = xiaomi_base + 0; break;
+          case RIL_UNSOL_CDMA_3G_INDICATOR: unsolResponseIndex = xiaomi_base + 1; break;
+          case RIL_UNSOL_CDMA_ENHANCE_ROAMING_INDICATOR: unsolResponseIndex = xiaomi_base + 2; break;
+          case RIL_UNSOL_CDMA_NETWORK_BASE_PLUSCODE_DIAL: unsolResponseIndex = xiaomi_base + 3; break;
+          case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE: unsolResponseIndex = xiaomi_base + 4; break;
+          case RIL_UNSOL_RESPONSE_VOICE_RADIO_TECH_CHANGED: unsolResponseIndex = xiaomi_base + 5; break;
+          case RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED_HTC: unsolResponseIndex = xiaomi_base + 6; break;
           case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED_M7:
-          case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED: unsolResponseIndex = htc_base + 7; break;
+          case RIL_UNSOL_RESPONSE_DATA_NETWORK_STATE_CHANGED: unsolResponseIndex = xiaomi_base + 7; break;
           case RIL_UNSOL_RESPONSE_PHONE_MODE_CHANGE_M7:
             // remap 4802 to 2
             RLOGD("m7 supported unsolicited response code %d", unsolResponse);

@@ -2,8 +2,8 @@
 
 set -e
 
-export DEVICE=a5
-export VENDOR=htc
+export DEVICE=dior
+export VENDOR=xiaomi
 
 if [ $# -eq 0 ]; then
   SRC=adb

@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_DEVICE),a5)
+ifeq ($(TARGET_DEVICE),dior)
 
 LOCAL_PATH := $(call my-dir)
 
